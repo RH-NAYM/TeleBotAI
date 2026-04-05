@@ -1,4 +1,4 @@
-from .utils.config import API_TOKEN
+from utils.config import API_TOKEN
 from telebot import TeleBot
 from telebot.types import KeyboardButton,  ReplyKeyboardMarkup
 import sqlite3
