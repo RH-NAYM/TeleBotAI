@@ -1,7 +1,7 @@
 # lesson_4_media.py
 import telebot
-from utils.config import API_TOKEN
-from utils.patterns import mobile_pattern # Assumes this is a compiled re pattern
+from .utils.config import API_TOKEN
+from lessons.utils.patterns import mobile_pattern # Assumes this is a compiled re pattern
 
 bot = telebot.TeleBot(API_TOKEN)
 

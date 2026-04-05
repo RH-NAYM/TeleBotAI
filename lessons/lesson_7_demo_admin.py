@@ -1,4 +1,4 @@
-from utils.config import API_TOKEN
+from .utils.config import API_TOKEN
 from telebot import TeleBot
 
 bot = TeleBot(token=API_TOKEN)

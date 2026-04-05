@@ -1,6 +1,6 @@
 # lesson_1_basic.py
 import telebot
-from utils.config import API_TOKEN
+from .utils.config import API_TOKEN
 
 bot = telebot.TeleBot(API_TOKEN)
 

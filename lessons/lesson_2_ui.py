@@ -1,7 +1,7 @@
 # lesson_2_ui.py
 import telebot
 from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup
-from utils.config import API_TOKEN
+from .utils.config import API_TOKEN
 
 bot = telebot.TeleBot(API_TOKEN)
 
