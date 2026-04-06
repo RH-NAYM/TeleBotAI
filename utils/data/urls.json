@@ -1,22 +1,120 @@
 {
     "Malaysian Projects": {
         "Project-Daia": {
-            "Daia-Face-Recognition": "https://he.ngrok.app/status/face",
-            "Daia-Main-Detection": "https://he.ngrok.app/status/daia"
+            "Facial-Recognition": {
+                "Check-Status": "https://he.ngrok.app/status/face",
+                "Demo-Execution": ""
+            },
+            "Main-Detection": {
+                "Check-Status": "https://he.ngrok.app/status/daia",
+                "Demo-Execution": ""
+            }
         }
     },
-    "Bangladeshi Projects": {
+    "Bangladeshi-Projects": {
         "Project-BAT": {
-            "BAT-Face-Recognition": "https://hasb.nagadpulse.com/status/face",
-            "BAT-Main-Detection": "https://hasb.nagadpulse.com/status/main",
-            "BAT-Cluster-Upliftment": "https://hasb.nagadpulse.com/status/cluster_upliftment",
-            "BAT-NLP-Execution": "https://hasb.nagadpulse.com/status/nlp"
+            "BAT-Facial-Recognition": {
+                "Check-Status": "https://hasb.nagadpulse.com/status/face",
+                "Demo-Execution": ""
+            },
+            "BAT-Main-Detection": {
+                "Check-Status": "https://hasb.nagadpulse.com/status/main",
+                "Demo-Execution": ""
+            },
+            "BAT-Cluster-Upliftment": {
+                "Check-Status": "https://hasb.nagadpulse.com/status/cluster_upliftment",
+                "Demo-Execution": ""
+            },
+            "BAT-NLP-Execution": {
+                "Check-Status": "https://hasb.nagadpulse.com/status/nlp",
+                "Demo-Execution": ""
+            }
         },
         "Project-HE-Universe": {
-            "HE-Universe-test-1": "test url test 1",
-            "HE-Universe-test-2": "test url test 2",
-            "HE-Universe-test-3": "test url test 3",
-            "HE-Universe-test-4": "test url test 4"
+            "BAT": {
+                "Check-Status": "https://batnlp.ngrok.app/status/bat/",
+                "Demo-Execution": "https://batnlp.ngrok.app/bat/"
+            },
+            "Facial Recognition": {
+                "Check-Status": "https://batnlp.ngrok.app/status/faceRecognition/",
+                "Demo-Execution": "https://batnlp.ngrok.app/faceRecognition/"
+            },
+            "Face Detection": {
+                "Check-Status": "https://batnlp.ngrok.app/status/faceDetection/",
+                "Demo-Execution": "https://batnlp.ngrok.app/faceDetection/"
+            },
+            "Hotspot": {
+                "Check-Status": "https://batnlp.ngrok.app/status/hotspot/",
+                "Demo-Execution": "https://batnlp.ngrok.app/hotspot/"
+            },
+            "Bangla OCR": {
+                "Check-Status": "https://batnlp.ngrok.app/status/banglaOcr/",
+                "Demo-Execution": "https://batnlp.ngrok.app/banglaOcr/"
+            },
+            "NID OCR": {
+                "Check-Status": "https://batnlp.ngrok.app/status/nidOcr/",
+                "Demo-Execution": "https://batnlp.ngrok.app/nidOcr/"
+            },
+            "Memo OCR": {
+                "Check-Status": "https://batnlp.ngrok.app/status/ocr/",
+                "Demo-Execution": "https://batnlp.ngrok.app/ocr/"
+            },
+            "NLP": {
+                "Check-Status": "https://batnlp.ngrok.app/status/nlpBat/",
+                "Demo-Execution": "https://batnlp.ngrok.app/nlpBat/"
+            },
+            "Bevarage Indrasty Analysis": {
+                "Check-Status": "https://batnlp.ngrok.app/status/fridgeDetection/",
+                "Demo-Execution": "https://batnlp.ngrok.app/fridgeDetection/"
+            },
+            "Material Detection": {
+                "Check-Status": "https://batnlp.ngrok.app/status/materialDetection/",
+                "Demo-Execution": "https://batnlp.ngrok.app/materialDetection/"
+            },
+            "MT House OCR": {
+                "Check-Status": "https://batnlp.ngrok.app/status/mTHouseOCR/",
+                "Demo-Execution": "https://batnlp.ngrok.app/mTHouseOCR/"
+            },
+            "NLP Zero Cal": {
+                "Check-Status": "https://batnlp.ngrok.app/status/nlpZeroCal/",
+                "Demo-Execution": "https://batnlp.ngrok.app/nlpZeroCal/"
+            },
+            "NLP Maya": {
+                "Check-Status": "https://batnlp.ngrok.app/status/nlpMaya/",
+                "Demo-Execution": "https://batnlp.ngrok.app/nlpMaya/"
+            },
+            "FMCG": {
+                "Check-Status": "https://batnlp.ngrok.app/status/fmcg/",
+                "Demo-Execution": "https://batnlp.ngrok.app/fmcg/"
+            },
+            "SPEECHFLOW": {
+                "Check-Status": "https://batnlp.ngrok.app/status/speechflow/",
+                "Demo-Execution": "https://batnlp.ngrok.app/speechflow/"
+            },
+            "Conversational Guidance": {
+                "Check-Status": "https://batnlp.ngrok.app/status/conversationalguidance/",
+                "Demo-Execution": "https://batnlp.ngrok.app/conversationalguidance/"
+            },
+            "SpeakMetric": {
+                "Check-Status": "https://batnlp.ngrok.app/status/speakmetric/",
+                "Demo-Execution": "https://batnlp.ngrok.app/speakmetric/"
+            },
+            "Domex": {
+                "Check-Status": "https://batnlp.ngrok.app/status/domex/",
+                "Demo-Execution": "https://batnlp.ngrok.app/domex/"
+            },
+            "International Image Analysis": {
+                "Check-Status": "https://batnlp.ngrok.app/status/intimgana/",
+                "Demo-Execution": "https://batnlp.ngrok.app/intimgana/"
+            },
+            "Pitch Monitoring": {
+                "Check-Status": "https://batnlp.ngrok.app/status/pitchMonitoring/",
+                "Demo-Execution": "https://batnlp.ngrok.app/pitchMonitoring/"
+            },
+            "International Image Analysis UBL": {
+                "Check-Status": "https://batnlp.ngrok.app/status/intimgana_ubl/",
+                "Demo-Execution": "https://batnlp.ngrok.app/intimgana_ubl/"
+            }
         }
     }
 }

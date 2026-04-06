@@ -1,4 +1,4 @@
-# utils/check.py
+import traceback
 import httpx
 
 class ServiceChecker:
@@ -19,29 +19,32 @@ class ServiceChecker:
             return f"❌ *Error:* `{str(e)}`"
 
     def format_response(self, name: str, data, path: list[str]):
-        header = f"{self.FUTURISTIC_LOGO} *{name}*  |  {' > '.join(path)}\n\n"
+        try:
+            header = f"{self.FUTURISTIC_LOGO} *{name}*  |  {' > '.join(path)}\n\n"
 
-        if not isinstance(data, dict):
-            return header + f"❌ *Invalid Response*\n`{str(data)[:500]}`"
+            if not isinstance(data, dict):
+                return header + f"❌ *Invalid Response*\n`{str(data)[:500]}`"
 
-        status = data.get("status", "Unknown")
-        message = data.get("message", "No message")
-        code = data.get("status_code", "N/A")
-        latency = data.get("latency_sec")
+            status = data.get("status", "Unknown")
+            message = data.get("message", "No message")
+            code = data.get("status_code", "N/A")
+            latency = data.get("latency_sec")
 
-        status_icon = "🟢 ONLINE" if code == 200 else "🟡 UNKNOWN" if code == "N/A" else "🔴 OFFLINE"
+            status_icon = "🟢 ONLINE" if code == 200 else "🟡 UNKNOWN" if code == "N/A" else "🔴 OFFLINE"
 
-        if latency is not None:
-            latency_label = "⚡ FAST" if latency < 0.3 else "🚀 NORMAL" if latency < 0.7 else "🐢 SLOW"
-        else:
-            latency_label = "N/A"
+            if latency is not None:
+                latency_label = "⚡ FAST" if latency < 0.3 else "🚀 NORMAL" if latency < 0.7 else "🐢 SLOW"
+            else:
+                latency_label = "N/A"
 
-        summary = (
-            f"━━━━━━━━━━━━━━━\n"
-            f"{status_icon} | Status: `{status}`\n"
-            f"🧾 | Code: `{code}`\n"
-            f"💬 | Message: {message}\n"
-            f"⏱️ | Latency: `{latency}` sec ({latency_label})\n"
-            f"━━━━━━━━━━━━━━━"
-        )
-        return header + summary
+            summary = (
+                f"━━━━━━━━━━━━━━━\n"
+                f"{status_icon} | Status: `{status}`\n"
+                f"🧾 | Code: `{code}`\n"
+                f"💬 | Message: {message}\n"
+                f"⏱️ | Latency: `{latency}` sec ({latency_label})\n"
+                f"━━━━━━━━━━━━━━━"
+            )
+            return header + summary
+        except Exception as e:
+            traceback.print_exc()
