@@ -1,1 +1,4 @@
 pyTelegramBotAPI
+httpx
+cryptography
+commentjson
