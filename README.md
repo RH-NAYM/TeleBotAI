@@ -13,3 +13,14 @@ TeleBotAI — An AI-powered Telegram bot framework designed for automation, NLP-
 - start - Lets create a new Instance at vast.ai
 - check - Check AI Server
 - help - Show available commands
+
+
+---
+
+
+---
+
+
+
+---
+
