@@ -24,3 +24,26 @@ TeleBotAI — An AI-powered Telegram bot framework designed for automation, NLP-
 
 ---
 
+
+
+"BAT Status": "",
+      "Facial Recognition Status": "",
+      "Face Detection Status": "",
+      "Hotspot Status": "",
+      "Bangla OCR Status": "",
+      "Nid Ocr Status": "",
+      "Memo OCR Status": "",
+      "NLP Status": "",
+      "Bevarage Indrasty Analysis Status": "",
+      "Material Detection Status": "",
+      "MT House OCR Status": "",
+      "NLP Zero Cal Status": "",
+      "NLP Maya Status": "",
+      "FMCG Status": "",
+      "SPEECHFLOW Status": "",
+      "Conversational Guidance Status": "",
+      "SpeakMetric Status": "",
+      "Domex Status": "",
+      "International Image Analysis Status": "",
+      "Pitch Monitoring Status": "",
+      "International Image Analysis UBL Status": ""

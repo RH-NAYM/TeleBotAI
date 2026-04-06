@@ -1,15 +1,20 @@
 import traceback
 import httpx
 
+
 class ServiceChecker:
     FUTURISTIC_LOGO = "🤖"
 
     async def run_check(self, name: str, url: str, path: list[str]):
+        if not url or not url.strip():
+            return f"⚠️ *{name}* has no endpoint configured."
+
         try:
             async with httpx.AsyncClient(timeout=5) as client:
                 response = await client.get(url)
                 try:
                     res_data = response.json()
+
                 except Exception:
                     res_data = response.text
 
@@ -30,10 +35,18 @@ class ServiceChecker:
             code = data.get("status_code", "N/A")
             latency = data.get("latency_sec")
 
-            status_icon = "🟢 ONLINE" if code == 200 else "🟡 UNKNOWN" if code == "N/A" else "🔴 OFFLINE"
+            status_icon = (
+                "🟢 ONLINE" if code == 200 else
+                "🟡 UNKNOWN" if code == "N/A" else
+                "🔴 OFFLINE"
+            )
 
             if latency is not None:
-                latency_label = "⚡ FAST" if latency < 0.3 else "🚀 NORMAL" if latency < 0.7 else "🐢 SLOW"
+                latency_label = (
+                    "⚡ FAST" if latency < 0.3 else
+                    "🚀 NORMAL" if latency < 0.7 else
+                    "🐢 SLOW"
+                )
             else:
                 latency_label = "N/A"
 
@@ -46,5 +59,7 @@ class ServiceChecker:
                 f"━━━━━━━━━━━━━━━"
             )
             return header + summary
-        except Exception as e:
+
+        except Exception:
             traceback.print_exc()
+            return f"❌ Formatting error for {name}"

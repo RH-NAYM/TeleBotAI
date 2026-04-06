@@ -32,87 +32,87 @@
         },
         "Project-HE-Universe": {
             "BAT": {
-                "Check-Status": "https://batnlp.ngrok.app/status/bat/",
+                "Check-Status": "https://batnlp.ngrok.app/status/bat",
                 "Demo-Execution": "https://batnlp.ngrok.app/bat/"
             },
             "Facial Recognition": {
-                "Check-Status": "https://batnlp.ngrok.app/status/faceRecognition/",
+                "Check-Status": "https://batnlp.ngrok.app/status/faceRecognition",
                 "Demo-Execution": "https://batnlp.ngrok.app/faceRecognition/"
             },
             "Face Detection": {
-                "Check-Status": "https://batnlp.ngrok.app/status/faceDetection/",
+                "Check-Status": "https://batnlp.ngrok.app/status/faceDetection",
                 "Demo-Execution": "https://batnlp.ngrok.app/faceDetection/"
             },
             "Hotspot": {
-                "Check-Status": "https://batnlp.ngrok.app/status/hotspot/",
+                "Check-Status": "https://batnlp.ngrok.app/status/hotspot",
                 "Demo-Execution": "https://batnlp.ngrok.app/hotspot/"
             },
             "Bangla OCR": {
-                "Check-Status": "https://batnlp.ngrok.app/status/banglaOcr/",
+                "Check-Status": "https://batnlp.ngrok.app/status/banglaOcr",
                 "Demo-Execution": "https://batnlp.ngrok.app/banglaOcr/"
             },
             "NID OCR": {
-                "Check-Status": "https://batnlp.ngrok.app/status/nidOcr/",
+                "Check-Status": "https://batnlp.ngrok.app/status/nidOcr",
                 "Demo-Execution": "https://batnlp.ngrok.app/nidOcr/"
             },
             "Memo OCR": {
-                "Check-Status": "https://batnlp.ngrok.app/status/ocr/",
+                "Check-Status": "https://batnlp.ngrok.app/status/ocr",
                 "Demo-Execution": "https://batnlp.ngrok.app/ocr/"
             },
             "NLP": {
-                "Check-Status": "https://batnlp.ngrok.app/status/nlpBat/",
+                "Check-Status": "https://batnlp.ngrok.app/status/nlpBat",
                 "Demo-Execution": "https://batnlp.ngrok.app/nlpBat/"
             },
             "Bevarage Indrasty Analysis": {
-                "Check-Status": "https://batnlp.ngrok.app/status/fridgeDetection/",
+                "Check-Status": "https://batnlp.ngrok.app/status/fridgeDetection",
                 "Demo-Execution": "https://batnlp.ngrok.app/fridgeDetection/"
             },
             "Material Detection": {
-                "Check-Status": "https://batnlp.ngrok.app/status/materialDetection/",
+                "Check-Status": "https://batnlp.ngrok.app/status/materialDetection",
                 "Demo-Execution": "https://batnlp.ngrok.app/materialDetection/"
             },
             "MT House OCR": {
-                "Check-Status": "https://batnlp.ngrok.app/status/mTHouseOCR/",
+                "Check-Status": "https://batnlp.ngrok.app/status/mTHouseOCR",
                 "Demo-Execution": "https://batnlp.ngrok.app/mTHouseOCR/"
             },
             "NLP Zero Cal": {
-                "Check-Status": "https://batnlp.ngrok.app/status/nlpZeroCal/",
+                "Check-Status": "https://batnlp.ngrok.app/status/nlpZeroCal",
                 "Demo-Execution": "https://batnlp.ngrok.app/nlpZeroCal/"
             },
             "NLP Maya": {
-                "Check-Status": "https://batnlp.ngrok.app/status/nlpMaya/",
+                "Check-Status": "https://batnlp.ngrok.app/status/nlpMaya",
                 "Demo-Execution": "https://batnlp.ngrok.app/nlpMaya/"
             },
             "FMCG": {
-                "Check-Status": "https://batnlp.ngrok.app/status/fmcg/",
+                "Check-Status": "https://batnlp.ngrok.app/status/fmcg",
                 "Demo-Execution": "https://batnlp.ngrok.app/fmcg/"
             },
             "SPEECHFLOW": {
-                "Check-Status": "https://batnlp.ngrok.app/status/speechflow/",
+                "Check-Status": "https://batnlp.ngrok.app/status/speechflow",
                 "Demo-Execution": "https://batnlp.ngrok.app/speechflow/"
             },
             "Conversational Guidance": {
-                "Check-Status": "https://batnlp.ngrok.app/status/conversationalguidance/",
+                "Check-Status": "https://batnlp.ngrok.app/status/conversationalguidance",
                 "Demo-Execution": "https://batnlp.ngrok.app/conversationalguidance/"
             },
             "SpeakMetric": {
-                "Check-Status": "https://batnlp.ngrok.app/status/speakmetric/",
+                "Check-Status": "https://batnlp.ngrok.app/status/speakmetric",
                 "Demo-Execution": "https://batnlp.ngrok.app/speakmetric/"
             },
             "Domex": {
-                "Check-Status": "https://batnlp.ngrok.app/status/domex/",
+                "Check-Status": "https://batnlp.ngrok.app/status/domex",
                 "Demo-Execution": "https://batnlp.ngrok.app/domex/"
             },
             "International Image Analysis": {
-                "Check-Status": "https://batnlp.ngrok.app/status/intimgana/",
+                "Check-Status": "https://batnlp.ngrok.app/status/intimgana",
                 "Demo-Execution": "https://batnlp.ngrok.app/intimgana/"
             },
             "Pitch Monitoring": {
-                "Check-Status": "https://batnlp.ngrok.app/status/pitchMonitoring/",
+                "Check-Status": "https://batnlp.ngrok.app/status/pitchMonitoring",
                 "Demo-Execution": "https://batnlp.ngrok.app/pitchMonitoring/"
             },
             "International Image Analysis UBL": {
-                "Check-Status": "https://batnlp.ngrok.app/status/intimgana_ubl/",
+                "Check-Status": "https://batnlp.ngrok.app/status/intimgana_ubl",
                 "Demo-Execution": "https://batnlp.ngrok.app/intimgana_ubl/"
             }
         }
