@@ -1,16 +1,18 @@
 {
-    "Malaysia": {
-        "Daia-Face": "https://he.ngrok.app/status/face",
-        "Daia-Main": "https://he.ngrok.app/status/daia"
+    "Malaysian Projects": {
+        "Project-Daia": {
+            "Daia-Face-Recognition": "https://he.ngrok.app/status/face",
+            "Daia-Main-Detection": "https://he.ngrok.app/status/daia"
+        }
     },
-    "Bangladesh": {
-        "BAT": {
-            "BAT-Face": "https://hasb.nagadpulse.com/status/face",
-            "BAT-Main": "https://hasb.nagadpulse.com/status/main",
+    "Bangladeshi Projects": {
+        "Project-BAT": {
+            "BAT-Face-Recognition": "https://hasb.nagadpulse.com/status/face",
+            "BAT-Main-Detection": "https://hasb.nagadpulse.com/status/main",
             "BAT-Cluster-Upliftment": "https://hasb.nagadpulse.com/status/cluster_upliftment",
-            "BAT-NLP": "https://hasb.nagadpulse.com/status/nlp"
+            "BAT-NLP-Execution": "https://hasb.nagadpulse.com/status/nlp"
         },
-        "HE-Universe": {
+        "Project-HE-Universe": {
             "HE-Universe-test-1": "test url test 1",
             "HE-Universe-test-2": "test url test 2",
             "HE-Universe-test-3": "test url test 3",
@@ -18,3 +20,7 @@
         }
     }
 }
+
+
+
+

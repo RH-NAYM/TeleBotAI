@@ -1,112 +1,98 @@
-import requests
-import json
-import time
-from lessons.utils.config import API_TOKEN
+import asyncio
 from telebot import TeleBot
 from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup
-from telebot.types import KeyboardButton,  ReplyKeyboardMarkup
+from lessons.utils.config import API_TOKEN
 from utils.tools import ToolsBot
+from utils.check import ServiceChecker
 
-
-
-
+bot = TeleBot(API_TOKEN)
 __toolsBot__ = ToolsBot()
-
-
+__checker__ = ServiceChecker()
 BOT_DATA = __toolsBot__.load_data("utils/data")
 
 
-"""
-BOT_DATA = {
-  "users": [
-    {
-      "_id": "6259939132",
-      "first_name": "Rakibul",
-      "last_name": "Hasan",
-      "phone_number": "8801638830165"
-    }
-  ],
-  "urls": {
-    "Malaysia": {
-      "Daia-Face": "https://he.ngrok.app/status/face",
-      "Daia-Main": "https://he.ngrok.app/status/daia"
-    },
-    "Bangladesh": {
-      "BAT": {
-        "BAT-Face": "https://hasb.nagadpulse.com/status/face",
-        "BAT-Main": "https://hasb.nagadpulse.com/status/main",
-        "BAT-Cluster-Upliftment": "https://hasb.nagadpulse.com/status/cluster_upliftment",
-        "BAT-NLP": "https://hasb.nagadpulse.com/status/nlp"
-      },
-      "HE-Universe": {
-        "HE-Universe-test-1": "test url test 1",
-        "HE-Universe-test-2": "test url test 2",
-        "HE-Universe-test-3": "test url test 3",
-        "HE-Universe-test-4": "test url test 4"
-      }
-    }
-  }
-}
-"""
+# -----------------------
+# Helper functions
+# -----------------------
+def get_data_by_path(data, path_list):
+    current = data
+    for key in path_list:
+        current = current.get(key, {})
+    return current
 
 
-bot = TeleBot(token=API_TOKEN)
+def create_buttons(current_level, path=None, max_buttons_per_row=3):
+    path = path or []
+    rows, temp_row = [], []
 
-def country():
-    keyboard = InlineKeyboardMarkup(row_width=2)
-    btn1 = InlineKeyboardButton(text="Bangladesh", callback_data="Bangladesh")
-    btn2 = InlineKeyboardButton(text="Malaysia", callback_data="Malaysia")
-    keyboard.add(btn1, btn2)
-    return keyboard
+    for key in current_level.keys():
+        temp_row.append(InlineKeyboardButton(text=key, callback_data="|".join(path + [key])))
+        if len(temp_row) == max_buttons_per_row:
+            rows.append(temp_row)
+            temp_row = []
+    if temp_row:
+        rows.append(temp_row)
 
-
-
-
-@bot.message_handler(commands=["check"])
-def check_country(msg):
-    first_name = msg.from_user.first_name
-    bot.send_message(msg.chat.id, text=f"Hello {first_name}! Please Select Country.", reply_markup=country())
-    # data = country()
-
-    # print(data)
-
-
-
-@bot.callback_query_handler(func=lambda data: True)
-def check_country(data):
-    if data.data in BOT_DATA["urls"]:
-        __toolsBot__.monitor({"xxxxxxxxxxxxxxxxxxxxxxx": BOT_DATA["urls"][data.data]})
+    # Back + Main Menu always in same row
+    if path:
+        back_btn = InlineKeyboardButton("⬅️ Back", callback_data="|".join(path[:-1]) or "root")
+        main_btn = InlineKeyboardButton("🏠 Main Menu", callback_data="root")
+        rows.append([back_btn, main_btn])
     else:
-        print(data.data)
+        rows.append([InlineKeyboardButton("🏠 Main Menu", callback_data="root")])
+
+    return InlineKeyboardMarkup(rows)
 
 
+# -----------------------
+# /check command
+# -----------------------
+@bot.message_handler(commands=["check"])
+def check_command(msg):
+    markup = create_buttons(BOT_DATA["urls"])
+    bot.send_message(msg.chat.id, "📊 *AI Service Dashboard*\nSelect a system to check:",
+                     reply_markup=markup, parse_mode="Markdown")
 
 
+# -----------------------
+# Callback handler
+# -----------------------
+@bot.callback_query_handler(func=lambda call: True)
+def handle_callback(call):
+    data = call.data
+    path = [] if data == "root" else data.split("|")
+    current = get_data_by_path(BOT_DATA["urls"], path) if path else BOT_DATA["urls"]
+
+    # Final URL → run check synchronously using asyncio.run
+    if isinstance(current, str):
+        bot.answer_callback_query(call.id, f"⏳ Checking {path[-1]}...", show_alert=True)
+
+        # Run async checker synchronously to avoid "no running loop"
+        import asyncio
+        result = asyncio.run(__checker__.run_check(name=path[-1], url=current, path=path))
+        bot.send_message(call.message.chat.id, result, parse_mode="Markdown")
+
+        # Show parent menu automatically
+        parent_path = path[:-1]
+        parent_data = get_data_by_path(BOT_DATA["urls"], parent_path) if parent_path else BOT_DATA["urls"]
+        bot.send_message(
+            call.message.chat.id,
+            f"🔁 *Continue Checking* | 📂 {' > '.join(parent_path) if parent_path else 'Dashboard'}",
+            reply_markup=create_buttons(parent_data, parent_path),
+            parse_mode="Markdown",
+        )
+        return
+
+    # Intermediate menu → show submenu
+    bot.send_message(
+        call.message.chat.id,
+        f"📂 {' > '.join(path) if path else 'Dashboard'}",
+        reply_markup=create_buttons(current, path),
+        parse_mode="Markdown",
+    )
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# -----------------------
+# Run bot
+# -----------------------
 bot.polling()
