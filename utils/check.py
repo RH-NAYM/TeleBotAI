@@ -1,16 +1,10 @@
+# utils/check.py
 import httpx
-import asyncio
 
 class ServiceChecker:
-    """
-    ServiceChecker handles API checks and formats responses with futuristic AI style.
-    """
     FUTURISTIC_LOGO = "🤖"
 
     async def run_check(self, name: str, url: str, path: list[str]):
-        """
-        Perform GET request to API asynchronously and format response.
-        """
         try:
             async with httpx.AsyncClient(timeout=5) as client:
                 response = await client.get(url)
@@ -25,9 +19,6 @@ class ServiceChecker:
             return f"❌ *Error:* `{str(e)}`"
 
     def format_response(self, name: str, data, path: list[str]):
-        """
-        Beautify API response with logo + name inline.
-        """
         header = f"{self.FUTURISTIC_LOGO} *{name}*  |  {' > '.join(path)}\n\n"
 
         if not isinstance(data, dict):
@@ -54,12 +45,3 @@ class ServiceChecker:
             f"━━━━━━━━━━━━━━━"
         )
         return header + summary
-
-
-
-
-
-
-
-
-
